@@ -46,7 +46,7 @@ while ($NumComputers -gt 0){
 			#Duplicate is found
 			#Write-Host "Are you getting in here? $Computers"
 			if($Computers -eq $numMachines){
-				Write-Host "No quedan más máquinas disponibles en el csv"
+				Write-Host "There are no more computers available in the csv"
 				Start-Sleep -s 1.5
 				$NumComputers=-1
 			}
