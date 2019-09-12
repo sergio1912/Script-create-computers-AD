@@ -53,14 +53,14 @@ while ($NumComputers -gt 0){
 		}
 	}
 
-		catch{
-			#There are no duplicates
-		   if ( $error[0].Exception -match "ADIdentityNotFoundException"){
-				$machinename = $firstname  + $lastname
-				#Create the computer
-			    Write-Host "Creating computer $computer in $ou"
-				New-ADComputer –Name $machinename –SamAccountName $machinename -Path $ou
-				$NumComputers--
-		   }
-		}
+	catch{
+		#There are no duplicates
+	   if ( $error[0].Exception -match "ADIdentityNotFoundException"){
+			$machinename = $firstname  + $lastname
+			#Create the computer
+		    Write-Host "Creating computer $computer in $ou"
+			New-ADComputer –Name $machinename –SamAccountName $machinename -Path $ou
+			$NumComputers--
+	   }
+	}
 }
